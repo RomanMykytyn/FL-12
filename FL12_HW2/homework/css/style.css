@@ -1,0 +1,87 @@
+@media print {
+  .tm-sidebar, .tm-team-img, #about, .blocks > .tm-content-box, .carousel-indicators, .tm-main-content > .tm-content-box:nth-child(6) {
+    display: none;
+  }
+
+  .tm-main-content {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .tm-team-description-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 700px;
+  }
+
+  .tm-content-header, .tm-content-box {
+    margin: 0;
+  }
+
+  .tm-banner {
+    padding-bottom: 0;
+  }
+
+  .padding-medium {
+    text-align: center;
+    padding-bottom: 0;
+  }
+
+  .padding-medium > h2 {
+    color: lightskyblue;
+    font-weight: lighter;
+  }
+
+  .padding-medium > ol {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .padding-medium > ol > li:nth-child(odd) {
+    text-align: right;
+  }
+
+  .padding-medium > ol > li:nth-child(even) {
+    text-align: left;
+  }
+
+  .tm-section-description:nth-child(3) {
+    margin-bottom: 0;
+  }
+
+  .heading {
+    margin: 0 auto;
+    max-width: 385px;
+  }
+
+  .blocks > .padding-medium {
+    padding-top: 0px;
+  }
+
+  .tm-section-title {
+    text-transform: uppercase;
+  }
+
+  .blocks > div > p:last-child {
+    font-style: italic;
+    letter-spacing: 0.9ex;
+  }
+
+  #tmCarousel {
+    padding-top: 40px;
+    padding-bottom: 5px;
+  }
+
+  .tm-footer {
+    padding: 0;
+  }
+}
+
+.tm-nav-item:hover {
+  background-color: lightskyblue;
+  color: #fff;
+}
