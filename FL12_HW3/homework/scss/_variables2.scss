@@ -1,1 +1,33 @@
 $header-img: "../img/m-h-night.jpg";
+$common-font: 'Source Sans Pro', sans-serif;
+$theme-font: 'Fresca', sans-serif;
+$banner-gradient: linear-gradient(to right, #e0a818, #a93770);
+$button-backround: #e0a818;
+$button-link-color: whitesmoke;
+$header-color: white;
+$header_section_card-color: white;
+$backlight-color: #ea4444;
+$body-background: #1e202d;
+$section_text-footer-color: #c0c3ce;
+$section-footer-background: #36384c;
+$section_header-color: white;
+$word-map: (
+  awesome: (
+    height: 50px,
+    width: 300px,
+    top: 95px,
+    left: 0
+  ),
+  adventure: (
+    height: 50px,
+    width: 190px,
+    top: 5px,
+    left: 970px
+  ),
+  start: (
+    height: 30px,
+    width: 70px,
+    top: 5px,
+    left: 125px
+  )
+);

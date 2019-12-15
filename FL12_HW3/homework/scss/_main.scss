@@ -2,30 +2,41 @@ body {
   margin: 0;
   padding: 0;
   width: 1920px;
+  background-color: $body-background;
+  font-family: $common-font;
 }
 
 @mixin button {
-    background-color: $button-color;
-    font-family: 'Hind', sans-serif;;
-    color: whitesmoke;
-    border: none;
-    font-size: 17px;
-    letter-spacing: 0.1mm;
-    padding: 14px 44px;
-    border-radius: 3px;
-    font-weight: 700;
+  background-color: $button-backround;
+  font-family: $common-font;
+  font-weight: bold;
+  color: $button-link-color;
+  border: none;
+  padding: 14px 44px;
+  font-size: 17px;
+  border-radius: 3px;
 }
 
 @mixin link {
-    color: #C0C3CE;
-    font-family: 'Hind', sans-serif;
-    font-size: 15px;
+  color: $button-link-color;
+  font-size: 16px;
+}
+
+@mixin word-backlight($word) {
+  content: "";
+  position: absolute;
+  background-color: $backlight-color;
+  height: map-get($word, "height");
+  width: map-get($word, "width");
+  top: map-get($word, "top");
+  left: map-get($word, "left");
+  z-index: -1;
 }
 
 %logo {
   display: flex;
   height: 45px;
-  font-family: 'Hind', sans-serif;
+  font-family: $theme-font;
   align-items: stretch;
 
   p {
@@ -46,6 +57,7 @@ body {
 
 .header-wrap {
   background: url($header-img) center/100%;
+  color: $header-color;
   height: 720px;
   padding: 20px 192px;
   box-sizing: border-box;
@@ -56,50 +68,56 @@ body {
   }
 
   .header_heading {
+    position: relative;
+    z-index: 1;
     width: 600px;
-    font-family: 'Source Sans Pro', sans-serif;
     margin-top: 70px;
     margin-bottom: 34px;
     font-size: 72px;
     font-weight: bold;
     line-height: 74px;
+
+    &::after {
+      @include word-backlight(map-get($word-map, "awesome"));
+    }
   }
 
   .header_text {
-    font-family: 'Hind', sans-serif;
+    font-family: $theme-font;
     font-size: 16px;
     line-height: 24px;
     white-space: pre-line;
   }
 
-  div {
-        padding-top: 0px;
-        font-family: 'Source Sans Pro', sans-serif;
+  .header_button {
+      margin-top: 45px;
+      @include button
+  }
 
-        .header_button {
-            margin-left: 0px;
-            @include button
-        }
+  .login {
+      font-size: 20px;
+      margin-left: 150px;
+      margin-top: 45px;
+      color: $button-link-color;
+  }
 
-        .login {
-            font-size: 20px;
-            margin-left: 150px;
-            color: white;
-        }
-    }
 }
+
 
 .section {
   text-align: center;
 
   .section_text {
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 42px;
     font-weight: 600;
-    color: #252730;
+    color: $section_header-color;
     margin-top: 37px;
     margin-bottom: 36px;
     position: relative;
+
+    &::after {
+      @include word-backlight(map-get($word-map, "adventure"));
+    }
   }
 
   .section_card_wrap {
@@ -112,7 +130,7 @@ body {
       width: 100%;
       height: 325px;
       margin: 0 0 25px 0;
-      background-color: #212520;
+      background-color: $section-footer-background;
       border-radius: 8px;
 
       .section_card_img {
@@ -125,11 +143,10 @@ body {
       .section_card_right_container {
         padding-top: 10px;
         margin-left: 525px;
-        width: 500px;
+        width: 480px;
 
         .section_card_heading {
-          font-family: 'Source Sans Pro', sans-serif;
-          color: white;
+          color: $header_section_card-color;
           text-align: center;
           font-weight: 600;
           font-size: 24px;
@@ -137,12 +154,12 @@ body {
         }
 
         .section_card_text {
-          font-family: 'Hind', sans-serif;
+          font-family: $theme-font;
           margin: 38px 0 18px 15px;
           font-size: 16px;
           line-height: 24px;
           text-align: justify;
-          color: #C0C3CE;
+          color: $section_text-footer-color;
           word-spacing: 2px;
         }
 
@@ -158,28 +175,32 @@ body {
     justify-content: space-around;
     position: relative;
     margin: 150px auto 0 auto;
-    background: linear-gradient(to right, #649515, #2B56DC);
+    background: $banner-gradient;
     width: 1200px;
     height: 145px;
     border-radius: 5px;
     z-index: 2;
 
     .section_banner_text_wrap {
-      font-family: 'Source Sans Pro', sans-serif;
       text-align: left;
       margin-top: 0px;
 
       .section_banner_heading {
+        color: $header-color;
         font-size: 32px;
         font-weight: 600;
         margin-bottom: 15px;
         margin-top: 25px;
         position: relative;
+
+        &::after {
+          @include word-backlight(map-get($word-map, "start"));
+        }
       }
 
       .section_banner_text {
-        font-family: 'Hind', sans-serif;
-        color: #C0C3CE;
+        font-family: $theme-font;
+        color: $section_text-footer-color;
       }
     }
 
@@ -191,17 +212,33 @@ body {
 }
 
 .footer {
-  background-color: #212520;
-  color: #C0C3CE;
+  background-color: $section-footer-background;
+  color: $section_text-footer-color;
   margin-top: -70px;
-  font-family: 'Hind', sans-serif;
+  font-family: $theme-font;
 
   .footer-wrap {
-    height: 240px;
-    padding-top: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    padding-top: 55px;
 
     .footer_logo {
       @extend %logo;
+    }
+
+    .footer_text {
+      font-family: $theme-font;
+      width: 300px;
+      margin: 0 60px;
+      text-align: left;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .footer-cr {
+      text-align: center;
     }
   }
 }

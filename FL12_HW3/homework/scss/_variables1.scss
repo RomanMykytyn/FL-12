@@ -1,2 +1,33 @@
 $header-img: "../img/m-h-day.jpg";
-$button-color: #639415;
+$common-font: 'Source Sans Pro', sans-serif;
+$theme-font: 'Hind', sans-serif;
+$banner-gradient: linear-gradient(to right, #649515, #2B56DC);
+$button-backround: #639415;
+$button-link-color: whitesmoke;
+$header-color: #2e2e31;
+$header_section_card-color: white;
+$backlight-color: #509dea;
+$body-background: white;
+$section_text-footer-color: #c0c3ce;
+$section-footer-background: #1e202d;
+$section_header-color: #1e202d;
+$word-map: (
+  awesome: (
+    height: 50px,
+    width: 300px,
+    top: 95px,
+    left: 0
+  ),
+  adventure: (
+    height: 50px,
+    width: 190px,
+    top: 5px,
+    left: 970px
+  ),
+  start: (
+    height: 30px,
+    width: 70px,
+    top: 5px,
+    left: 125px
+  )
+);
