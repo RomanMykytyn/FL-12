@@ -1,0 +1,258 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+:root {
+  --bg-color--dark: #0b192f;
+  --bg-color--header: #024161;
+  --link: #fff;
+  --link--hover: #1f52a4;
+  --bg-footer-color: #024161;
+}
+
+body {
+  font-family: roboto;
+  background-color: #0b192f;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 1400px) {
+  @media (max-width: 1200px) {
+    html {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 960px) {
+    html {
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 880px) {
+    html {
+      font-size: 10px;
+    }
+  }
+
+  body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "nav nav"
+      "header-image header-image"
+      "main aside"
+      "footer footer";
+    grid-gap: 0.75rem;
+    max-width: 1400px;
+  }
+
+  header {
+    grid-area: nav;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .nav {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      background-color: #024161;
+      width: 100%;
+      padding: 0 3.5em 0 1.5em;
+      margin-bottom: 1.5rem;
+  }
+
+  .nav-header {
+    font-size: 2rem;
+  }
+
+  .nav-header > span {
+    color: red;
+    font-weight: lighter;
+  }
+
+  .nav-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+  }
+
+  .nav-menu li a {
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #fff;
+  }
+
+  .nav-menu li {
+    height: 100%;
+    padding: 0 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .nav-menu li:hover {
+    transition: 0.5s;
+    background-color: #1f52a4;
+    cursor: pointer;
+  }
+
+  .header-image {
+    background-image: url(../img/post0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 30em;
+  }
+
+  .header-text {
+    position: absolute;
+    left: 5%;
+    bottom: 15%;
+    width: 60%;
+    line-height: 1.5em;
+  }
+
+  .header-text > h1 {
+    font-size: 3rem;
+    font-weight: lighter;
+  }
+
+  main {
+    grid-area: main;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .article {
+    display: flex;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .article-img {
+    width: 50%;
+    height: 20rem;
+  }
+
+  .article-img:hover {
+    transition: 0.5s;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .article-content > h2 {
+    font-weight: normal;
+    color: white;
+    font-size: 3rem;
+    margin: 0.5em 0;
+  }
+
+  .article-content > h2:hover {
+    transition: 0.5s;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+
+  .article-content {
+    padding-left: 2.5em;
+  }
+
+  .article-content > p {
+    line-height: 1.5em;
+  }
+
+  .article > time {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 2rem;
+    padding: 5px;
+  }
+
+  .article > time > span {
+    font-size: 3rem;
+  }
+
+
+  .article:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .article:nth-child(even) .article-content {
+    padding-right: 2.5em;
+  }
+
+  .article:first-child {
+    background-color: #2d95bb;
+  }
+
+  .article:nth-child(3n+2) {
+    background-color: #9d27b0;
+  }
+
+  .article:nth-child(3n+3) {
+    background-color: #ed5120;
+  }
+
+  .article:nth-child(3n+4) {
+    background-color: #9bb800;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  .news {
+    background-color: white;
+  }
+
+  .news > h2 {
+    margin: 1rem 2rem;
+    font-weight: normal;
+  }
+
+  .news > p {
+    margin: 1rem 2rem;
+    padding-bottom: 2rem;
+    line-height: 1.5rem;
+  }
+
+  .news-img {
+    width: 100%;
+  }
+
+  footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    background-color: #024161;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+}
+
+.post-1 {
+	background: #9d27b0;
+}
+.post-2 {
+	background: #9bb800;
+}
+.post-3 {
+	background: #ed5120;
+}
+.post-4 {
+	background: #9d27b0;
+}
+.post-5 {
+	background: #2d95bb;
+}
+
+/* Your styles go here */
