@@ -1,0 +1,26 @@
+ul {
+  list-style-type: none;
+  vertical-align: bottom;
+}
+
+body {
+  font-size: 18px;
+}
+
+i {
+  vertical-align: bottom;
+  margin-right: 5px;
+}
+
+.elem:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.folder {
+  color: orange;
+}
+
+.file {
+  color: grey;
+}
